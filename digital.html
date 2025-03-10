@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        #digital{
+            width: 200px;
+            height: 60px;
+            box-shadow: 0 0 40px rgb(43, 198, 226);
+            background-color: teal;
+            color: white;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: bolder;
+            font-style: italic;
+            padding: 80px;
+            border-radius: 20px;
+            
+
+        }
+        b{
+            text-transform: uppercase;
+            color:lawngreen;
+            position: relative;
+            top: -160px;
+font-size: large;
+            left: 587px;
+            font-style: italic;
+            
+        }
+        #f{
+            display: flex;
+            column-gap: 20px;
+        }
+        body{
+            background-color: black;
+            padding-top: 111px;
+            overflow-x: hidden;
+        }
+        #day{
+            color: white;
+            font-size: xx-large;
+            font-style: italic;
+            font-weight: bolder;
+            position: relative;
+            left: 677px;
+            top: -120px;
+        }
+       
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="text-transform: capitalize;font-weight: bolder;font-size: xx-large;font-style: italic;color:mediumslateblue; text-decoration: underline;">digital clock</h1>
+    <div id="digital">
+      
+    </div>
+    </center>
+    <center>
+    <div id="f">
+     <h1 style="position: relative;left: 729px; top: -230px;color: white;text-transform: uppercase;font-size: x-large;font-style: italic;">time</h1>
+        <b>hrs</b>
+        <b>min</b>
+        <b>sec</b>
+       </div>
+    </center>
+    
+<div id="day">
+
+</div>
+<div id="f" style="position: relative;top: -20px; left: 80px;">
+    
+       <b>dd</b>
+       <b>mm</b>
+       <b>yyy</b>
+      </div>
+
+
+   <script>
+    function clock(){
+    const time=new Date()//predefined 
+    let hrs=time.getHours()
+    let min=time.getMinutes()
+    let sec=time.getSeconds()
+    let milli=time.getMilliseconds()//nice
+  
+    let word=document.getElementById('digital')
+    word.innerHTML=hrs+':'+min +':' +sec+':'+milli 
+
+
+
+    }
+    setInterval(clock,1000)
+    // clock()
+
+    function days(){
+    
+        const count=new Date()
+        let dd=count.getDate()
+        let mm=count.getMonth()
+       
+        let y=count.getFullYear()
+     
+        let next=document.getElementById('day')
+        next.textContent= dd+':'+mm+ ':'+y
+
+    }
+setInterval(days,1000)
+days()
+    </script>
+</body>
+</html>
